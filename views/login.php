@@ -12,7 +12,8 @@
     <a href="/bezopasnost_SUR/public/login">LOGIN</a>
     <a href="/bezopasnost_SUR/public/registration">REGISTRATION</a>
 
-    <h2>Main</h2>
+    <h2>Login</h2>
+
     <?php
 
     ?>

@@ -24,17 +24,13 @@
                     if(class_exists($controllerName) && method_exists($controllerName, $actionName)){
                         $controller = new $controllerName();
                         return $controller->$actionName();
-                    }else{
-                        http_response_code(404);
-                        echo "Контроллер/Метод не найден.<br>";
-                        return;
                     }
-
-                }else{
                     http_response_code(404);
-                    echo "Нету такого URL. <br>";
+                    echo "Контроллер/Метод не найден.<br>";
+                    return;
                 }
-
+                http_response_code(404);
+//                echo "Нету такого URL. <br>";
             }
         }
 

@@ -21,9 +21,6 @@
         $router->resolve();
 
     ?>
-    <a href="/bezopasnost_SUR/public/">MAIN</a>
-    <a href="/bezopasnost_SUR/public/login">LOGIN</a>
-    <a href="/bezopasnost_SUR/public/registration">REGISTRATION</a>
 
 </body>
 </html>
