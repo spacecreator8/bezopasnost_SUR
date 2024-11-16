@@ -14,6 +14,14 @@
 
     <h2>Login</h2>
 
+    <form action="/bezopasnost_SUR/public/login_process" method="post">
+        <div>Login</div>
+        <input type="text" name="login">
+        <div>Password</div>
+        <input type="password" name="password">
+        <button type="submit">Send</button>
+    </form>
+
     <?php
 
     ?>

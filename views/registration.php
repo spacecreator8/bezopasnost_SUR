@@ -14,6 +14,15 @@
 
     <h2>Registration</h2>
 
+    <form action="/bezopasnost_SUR/public/registration_process" method="post">
+        <div>Login</div>
+        <input type="text" name="login">
+        <div>Password-1</div>
+        <input type="password" name="password1">
+        <div>Password-2</div>
+        <input type="password" name="password2">
+        <button type="submit">Send</button>
+    </form>
     <?php
 
     ?>
