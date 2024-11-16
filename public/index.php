@@ -7,8 +7,23 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <a href="app/registration.php">Регистрация</a>&nbsp&nbsp&nbsp&nbsp
-    <a href="app/login.php">Авторизация</a>
+    <?php
+        require_once '../router/router.php';
+        require_once '../app/controllers/MainController.php';
+        require_once '../app/controllers/LoginController.php';
+        require_once '../app/controllers/RegistrationController.php';
+
+        $router = new Router();
+        $router->addRoute('GET', '/bezopasnost_SUR/public/', 'MainController', 'index');
+        $router->addRoute('GET', '/bezopasnost_SUR/public/login', 'LoginController', 'index');
+        $router->addRoute('GET', '/bezopasnost_SUR/public/registration', 'RegistrationController', 'index');
+
+        $router->resolve();
+
+    ?>
+    <a href="/bezopasnost_SUR/public/">MAIN</a>
+    <a href="/bezopasnost_SUR/public/login">LOGIN</a>
+    <a href="/bezopasnost_SUR/public/registration">REGISTRATION</a>
 
 </body>
 </html>
