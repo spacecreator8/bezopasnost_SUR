@@ -24,7 +24,12 @@
         <button type="submit">Send</button>
     </form>
     <?php
-
+        session_start();
+        if(isset($_SESSION['warning'])){
+    ?> <div style="color: red;"><?= $_SESSION['warning'] ?> </div>
+    <?php
+        }
+        unset($_SESSION['warning']);
     ?>
 </body>
 </html>
