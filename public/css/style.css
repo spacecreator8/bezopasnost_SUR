@@ -3,6 +3,9 @@
     padding:0;
     box-sizing: content-box;
 }
-body{
-
+body > a{
+    margin:5px;
+}
+body > input{
+    margin:5px;
 }

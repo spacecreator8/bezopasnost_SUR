@@ -20,18 +20,26 @@
     ?>
 
     <?php
-    if (session_status() == PHP_SESSION_NONE) {
-        session_start();
-    }
-    if(isset($_SESSION['auth_user'])){
-        ?><a href="/bezopasnost_SUR/public/for_auth">ForAuth</a><?php
-        ?><a href="/bezopasnost_SUR/public/logout">Logout</a><?php
-    }
-    ?>
+        if (session_status() == PHP_SESSION_NONE) {
+            session_start();
+        }
+        if(isset($_SESSION['auth_user'])){
+            ?><a href="/bezopasnost_SUR/public/for_auth">ForAuth</a><?php
+            ?><a href="/bezopasnost_SUR/public/logout">Logout</a><?php
+        }
+        ?>
 
-    <h2>Main</h2>
+<h2>ForAuth</h2>
     <?php
+        if (session_status() == PHP_SESSION_NONE) {
+            session_start();
+        }
+        if(isset($_SESSION['login_user'])){
+            ?><div>Ваш логин: <?= $_SESSION['login_user'] ?></div><?php
+        }
+        ?>
+<?php
 
-    ?>
+?>
 </body>
 </html>

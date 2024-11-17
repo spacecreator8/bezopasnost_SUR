@@ -8,9 +8,26 @@
     <title>Document</title>
 </head>
 <body>
-    <a href="/bezopasnost_SUR/public/">MAIN</a>
-    <a href="/bezopasnost_SUR/public/login">LOGIN</a>
-    <a href="/bezopasnost_SUR/public/registration">REGISTRATION</a>
+    <a href="/bezopasnost_SUR/public/">Main</a>
+    <?php
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+    if(!isset($_SESSION['auth_user'])){
+        ?><a href="/bezopasnost_SUR/public/login">Login</a><?php
+        ?><a href="/bezopasnost_SUR/public/registration">Registration</a><?php
+    }
+    ?>
+
+    <?php
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+    if(isset($_SESSION['auth_user'])){
+        ?><a href="/bezopasnost_SUR/public/for_auth">ForAuth</a><?php
+        ?><a href="/bezopasnost_SUR/public/logout">Logout</a><?php
+    }
+    ?>
 
     <h2>Registration</h2>
 
@@ -24,10 +41,14 @@
         <button type="submit">Send</button>
     </form>
     <?php
+    if (session_status() == PHP_SESSION_NONE) {
         session_start();
+    }
         if(isset($_SESSION['warning'])){
-    ?> <div style="color: red;"><?= $_SESSION['warning'] ?> </div>
-    <?php
+            foreach($_SESSION['warning'] as $er){
+                ?> <div style="color: red;"><?= $er ?> </div>
+                <?php
+            }
         }
         unset($_SESSION['warning']);
     ?>

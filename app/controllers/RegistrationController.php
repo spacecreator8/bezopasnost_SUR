@@ -1,5 +1,5 @@
 <?php
-require '../database/rb-mysql.php';
+require_once '../database/rb-mysql.php';
 class RegistrationController{
     public function index(){
         include '../views/registration.php';
@@ -12,7 +12,9 @@ class RegistrationController{
         if (!R::testConnection()) {
             die('Не удалось подключиться к базе данных.');
         }
-        session_start();
+        if (session_status() == PHP_SESSION_NONE) {
+            session_start();
+        }
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $login = $_POST['login'];
             $password1 = $_POST['password1'];
@@ -23,12 +25,12 @@ class RegistrationController{
                 $user->login = $login;
                 $user->password = password_hash($password1, PASSWORD_BCRYPT);
                 R::store($user);
+                header('Location: /bezopasnost_SUR/public/login');
             } else {
-                $_SESSION['warning'] = 'Пароли не совпадают.';
+                $_SESSION['warning'][] = 'Пароли не совпадают.';
                 header('Location: /bezopasnost_SUR/public/registration');
                 exit();
             }
         }
-        var_dump($_POST);
     }
 }
