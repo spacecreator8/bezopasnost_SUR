@@ -23,7 +23,7 @@ class LoginController{
                 header('Location: /bezopasnost_SUR/public/for_auth');
                 exit();
             } else {
-                $_SESSION['warning'] = 'Удостоверьтесь, что пользователь с такими данными записан в базе данных.';
+                $_SESSION['warning'][] = 'Удостоверьтесь, что пользователь с такими данными записан в базе данных.';
                 header('Location: /bezopasnost_SUR/public/login');
                 exit();
             }

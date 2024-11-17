@@ -2,7 +2,7 @@
 
 class ValidatorPasswordService{
     public $errors = [];
-    public function index(string $password){
+    public function checkPassword(string $password){
         if(strlen($password) < 5){
             $this->errors[] = 'Пароль должен быть длинной минимум 5 символов';
         }

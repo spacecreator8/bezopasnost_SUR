@@ -27,8 +27,8 @@ class RegistrationController{
 
             $emailValidation = new ValidatorEmailService();
             $passwordValidation = new ValidatorPasswordService();
-            $emailValidation = $emailValidation->index($email);
-            $passwordValidation = $passwordValidation->index($password1);
+            $emailValidation = $emailValidation->checkEmail($email);
+            $passwordValidation = $passwordValidation->checkPassword ($password1);
 
             if(!isset($_SESSION['warning'])){
                 $_SESSION['warning'] = [];
