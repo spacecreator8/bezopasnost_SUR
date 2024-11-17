@@ -19,6 +19,7 @@ class LoginController{
             if ($user && password_verify($password, $user->password)) {
                 $_SESSION['auth_user'] = $user->id;
                 $_SESSION['login_user'] = $user->login;
+                $_SESSION['email_user'] = $user->email;
                 header('Location: /bezopasnost_SUR/public/for_auth');
                 exit();
             } else {

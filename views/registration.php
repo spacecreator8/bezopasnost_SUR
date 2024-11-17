@@ -34,6 +34,8 @@
     <form action="/bezopasnost_SUR/public/registration_process" method="post">
         <div>Login</div>
         <input type="text" name="login">
+        <div>Email</div>
+        <input type="text" name="email">
         <div>Password-1</div>
         <input type="password" name="password1">
         <div>Password-2</div>

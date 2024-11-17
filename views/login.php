@@ -43,8 +43,10 @@
         session_start();
     }
     if(isset($_SESSION['warning'])){
-            ?> <div style="color: red;"><?= $_SESSION['warning'] ?> </div>
+        foreach($_SESSION['warning'] as $er){
+            ?> <div style="color: red;"><?= $er ?> </div>
             <?php
+        }
     }
     unset($_SESSION['warning']);
     ?>

@@ -31,11 +31,9 @@
 
 <h2>ForAuth</h2>
     <?php
-        if (session_status() == PHP_SESSION_NONE) {
-            session_start();
-        }
         if(isset($_SESSION['login_user'])){
             ?><div>Ваш логин: <?= $_SESSION['login_user'] ?></div><?php
+            ?><div>Ваша почта: <?= $_SESSION['email_user'] ?></div><?php
         }
         ?>
 <?php
